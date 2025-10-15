@@ -11,7 +11,7 @@ MONTH(to_timestamp(STARTED_AT))AS MONTH,
 {{season_func('STARTED_AT')}} as season_of_year
 
     from 
-    {{ source('DEMO', 'BIKE') }}
+    {{ ref("stage_bike") }}
     WHERE STARTED_AT != 'started_at'
 )
 
